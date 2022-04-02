@@ -17,9 +17,6 @@ public class Borrow {
     private Date broughtDate;
 
 
-    @OneToMany(mappedBy = "borrow")
-    private List<Student> students;
-
     public Integer getBorrowId() {
         return borrowId;
     }
@@ -58,13 +55,5 @@ public class Borrow {
 
     public void setBroughtDate(Date broughtDate) {
         this.broughtDate = broughtDate;
-    }
-
-    public List<Student> getStudents() {
-        return students;
-    }
-
-    public void setStudents(List<Student> students) {
-        this.students = students;
     }
 }

@@ -17,11 +17,6 @@ public class Student {
     private String clasS;
     private Integer point;
 
-
-    @ManyToOne
-    @JoinColumn(name = "borrowId", insertable = false, updatable = false) //Mediante esto, no se actualizan ni
-    private Borrow borrow;
-
     public Integer getStudentId() {
         return studentId;
     }
@@ -78,11 +73,4 @@ public class Student {
         this.point = point;
     }
 
-    public Borrow getBorrow() {
-        return borrow;
-    }
-
-    public void setBorrow(Borrow borrow) {
-        this.borrow = borrow;
-    }
 }

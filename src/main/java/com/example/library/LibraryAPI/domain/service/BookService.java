@@ -31,5 +31,10 @@ public class BookService {
             return true;
         }).orElse(false);
         }
-
+    public Optional<List<Book>> findBookByAuthorName(String name){
+        return bookRepository.findBookByAuthorName(name);
+    }
+    public Optional<List<Book>> findBookByAuthorSurname(String surname){
+        return bookRepository.findBookByAuthorSurname(surname);
+    }
 }

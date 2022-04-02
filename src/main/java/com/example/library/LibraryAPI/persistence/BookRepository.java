@@ -32,6 +32,19 @@ public class BookRepository implements com.example.library.LibraryAPI.domain.rep
     }
 
     @Override
+    public Optional<List<Book>> findBookByAuthorName(String name) {
+        List<Book> books = bookCrudRepository.findBookByAuthorName(name);
+        return Optional.of(books);
+    }
+
+
+    @Override
+    public Optional<List<Book>> findBookByAuthorSurname(String surname) {
+        List<Book> books = bookCrudRepository.findBookByAuthorSurname(surname);
+        return Optional.of(books);
+    }
+
+    @Override
     public void delete(int bookId) {
         bookCrudRepository.deleteById(bookId);
     }

@@ -27,4 +27,17 @@ public class BookController {
                 .orElse(new ResponseEntity<>(HttpStatus.NOT_FOUND));
     }
 
+    @PostMapping("/save")
+    public ResponseEntity<Book> save(@RequestBody Book book){
+        return new ResponseEntity<>(bookService.save(book), HttpStatus.CREATED);
+    }
+
+    @DeleteMapping("/delete/{id}")
+    public ResponseEntity delete(@PathVariable("id") int bookId){
+        if(bookService.delete(bookId)) {
+            return new ResponseEntity(HttpStatus.OK);
+        } else  {
+            return new ResponseEntity(HttpStatus.NOT_FOUND);
+        }
+    }
 }

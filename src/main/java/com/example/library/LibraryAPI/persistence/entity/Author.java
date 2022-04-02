@@ -12,8 +12,6 @@ public class Author {
     private String name;
     private String surname;
 
-    @OneToMany(mappedBy = "author")
-    private List<Book> books;
 
     public Integer getAuthorId() {
         return authorId;
@@ -39,11 +37,4 @@ public class Author {
         this.surname = surname;
     }
 
-    public List<Book> getBooks() {
-        return books;
-    }
-
-    public void setBooks(List<Book> books) {
-        this.books = books;
-    }
 }

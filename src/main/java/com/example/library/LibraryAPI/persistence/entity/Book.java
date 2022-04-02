@@ -10,6 +10,7 @@ public class Book {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "bookId")
     private Integer bookId;
     private String name;
     private Integer pageCount;
@@ -27,8 +28,6 @@ public class Book {
     @JoinColumn(name = "typeId", insertable = false, updatable = false) //Mediante esto, no se actualizan ni
     private Type type;
 
-    @OneToMany(mappedBy = "book")
-    private List<Borrow> borrows;
 
     public Integer getBookId() {
         return bookId;
@@ -94,11 +93,4 @@ public class Book {
         this.type = type;
     }
 
-    public List<Borrow> getBorrows() {
-        return borrows;
-    }
-
-    public void setBorrows(List<Borrow> borrows) {
-        this.borrows = borrows;
-    }
 }

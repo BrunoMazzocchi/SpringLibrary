@@ -12,6 +12,19 @@ public class Type {
     private Integer typeId;
     private String name;
 
-    @OneToMany(mappedBy = "type")
-    private List<Book> books;
+    public Integer getTypeId() {
+        return typeId;
+    }
+
+    public void setTypeId(Integer typeId) {
+        this.typeId = typeId;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
 }

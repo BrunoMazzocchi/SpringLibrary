@@ -1,7 +1,6 @@
 package com.example.library.LibraryAPI.persistence.entity;
 
 import javax.persistence.*;
-import java.sql.*;
 import java.sql.Date;
 import java.util.*;
 
@@ -14,13 +13,9 @@ public class Borrow {
     private Integer borrowId;
     private Integer studentId;
     private Integer bookId;
-    private Date takeDate;
+    private Date takenDate;
     private Date broughtDate;
 
-
-    @ManyToOne
-    @JoinColumn(name = "bookId", insertable = false, updatable = false) //Mediante esto, no se actualizan ni
-    private Book book;
 
     @OneToMany(mappedBy = "borrow")
     private List<Student> students;
@@ -49,12 +44,12 @@ public class Borrow {
         this.bookId = bookId;
     }
 
-    public Date getTakeDate() {
-        return takeDate;
+    public Date getTakenDate() {
+        return takenDate;
     }
 
-    public void setTakeDate(Date takeDate) {
-        this.takeDate = takeDate;
+    public void setTakenDate(Date takeDate) {
+        this.takenDate = takeDate;
     }
 
     public Date getBroughtDate() {
@@ -63,14 +58,6 @@ public class Borrow {
 
     public void setBroughtDate(Date broughtDate) {
         this.broughtDate = broughtDate;
-    }
-
-    public Book getBook() {
-        return book;
-    }
-
-    public void setBook(Book book) {
-        this.book = book;
     }
 
     public List<Student> getStudents() {
